@@ -2,12 +2,9 @@
 
 
 
-	
-
-
 .row_col {
 	position: relative;
-	margin-top: -20px;
+	margin-top: -25px;
     margin-right: 100px;
 	text-align: right;	
 	
@@ -50,7 +47,7 @@ text-decoration: none;
 border-radius: 10px 10px 10px 10px;
 box-shadow: 0 0 7px 0 rgba(0,0,0,0.6);
 }
-.menu_ul > li:hover::before { 
+.menu_ul > li:hover::before { pointer-events: none;
 margin-left: 185px; margin-top: -3px;
 color: black;
 font-size: 25px;
@@ -152,6 +149,9 @@ background-color:black;
 
 
 body { font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+
+
+
 }
 
 .sbutton { width:190px; height:25px; background-color:#000000;  color:#ffffff; border: 1px solid gray; }
@@ -161,11 +161,11 @@ background-color:green;
 }
 
 
-p {font-family:Arial; font-size: 15px; color:#424242;margin:0px;}
+p {font-family:Arial; font-size: 15px; color:#424242;margin:0px; }
 p.color {font-family:Arial; font-size: 15px; color:#FFFFFF;margin:0px; }
 
 
-.lesson {border: 1px solid green; width:100%-10; margin-left:2px; margin-top: 1px; margin-bottom: 1px; background-color:black;}
+.lesson {border: 1px solid green; width:100%-10; margin-left:2px; margin-top: 1px; margin-bottom: 1px; background-color:rgb(146, 146, 146);}
 .lesson_name {font-weight:normal;  margin-top: 0px;}
 .lesson_adds {font-size:12px;margin-top:7px; margin-bottom: 0px; color: green;}
 
@@ -212,8 +212,8 @@ label {
 	    position: relative;
 	    padding-left: 45px;
 	    margin-right: 15px;
-	    margin-top: 11px;
-	margin-bottom:  4px;
+	    margin-top: 5px;
+	margin-bottom:  0px;
 	    font-size: 18px; 
 	}
 	label:before {
@@ -221,13 +221,13 @@ label {
 	    display: inline-block;
 	 
 	    width: 20px;
-	    height: 16px;
+	    height: 20px;
 	 
 	    margin-right: 10px;
 	    position: absolute;
 	    left: 14px;
 	    bottom: 0px;
-	    background-color:rgb(35, 121, 201);
+	    background-color:rgb(112, 126, 151);
 	    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 	}
 
@@ -245,22 +245,23 @@ label {
 	    font-size: 30px;
 	    color: white;
 	    text-align: center;
-	    line-height: 10px;
+	    line-height: 14px;
 	}
+
 
 	input[type=radio] {
 	    display: none;
 	}
 
 
-.radio label:before {
-	border-radius: 8px;}
- input[type=radio]:checked + label:before {
+    .radio label:before {
+	border-radius: 50%;}
+    input[type=radio]:checked + label:before {
 	    content: "\2022";
 	    color: white;
-	    font-size: 50px;
+	    font-size: 30px;
 	    text-align: center;
-	    line-height: 11px;
+	    line-height:15px;
 	}
 /*end*/
 
@@ -288,15 +289,16 @@ height:130px;
 
 }
 
-body>html #coolmenu3 a{
+/* body>html #coolmenu3 a{
 width:auto;
-}
+} */
 
 #coolmenu3 a:hover{ border: 5px dotted green;
 	border-color: green;
 	background-repeat: no-repeat;
 
 background-image:url(arsen_base.gif);
+
 height:130px;
 width: 37px;
 }
@@ -343,7 +345,7 @@ height:71px;
 
 #coolmenu4 {
 
-height:30px;
+height:45px;
 width: 200px;
 }
 
@@ -421,7 +423,7 @@ height:20px;
 
 
 #coolmenu7 { 
-height:10px;
+height:10px; border: #000000;
 }
 
 #coolmenu7 a { background-image: url(bg_transparent.png);
@@ -459,7 +461,7 @@ height:18px;
 
   /* кнопки */
 
-.btn {
+.btn { 
 	display: inline-block;
 	font-weight: 400;
 	line-height: 1.5;

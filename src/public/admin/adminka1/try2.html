@@ -1,0 +1,174 @@
+<style>
+.filter__section {
+    display: flex;
+    margin: 0 -8px;
+  }
+  
+  .form__group {
+    width: 25%;
+    margin: 15px 0;
+    padding: 0 8px;
+  }
+  
+  .form__label {
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .form__control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+  }
+  
+  .filtered {
+    margin: 15px 0;
+  }
+  
+  .filtered.hide {
+    display: none;
+  }
+</style>
+
+
+
+<div id="app">
+    <h2>Масла моторные</h2>
+    <form action="">
+      <div class="filter__section">
+        <div class="form__group">
+          <label class="form__label">Бренд</label>
+          <select name="filter__brand" class="form__control linked__data">
+            <option value="">Выбрать ...</option>
+            <option value="idemitsu">IDEMITSU</option>
+            <option value="toyota">TOYOTA</option>
+            <option value="zic">ZIC</option>
+          </select>
+        </div>
+  
+        <div class="form__group">
+          <label class="form__label">Вязкость по SAE</label>
+          <select name="filter__viscosity" class="form__control linked__data">
+            <option value="">Выбрать ...</option>
+            <option value="0w20">0w20</option>
+            <option value="0w30">0w30</option>
+            <option value="5w30">5w30</option>
+            <option value="5w40">5w40</option>
+            <option value="10w40">10w40</option>
+          </select>
+        </div>
+  
+        <div class="form__group">
+          <label class="form__label">Тип двигателя</label>
+          <select name="filter__engine" class="form__control linked__data">
+            <option value="">Выбрать ...</option>
+            <option value="petrol">Бензин</option>
+            <option value="diesel">Дизель</option>
+          </select>
+        </div>
+  
+        <div class="form__group">
+          <label class="form__label">Объем канистры</label>
+          <select name="filter__size" class="form__control linked__data">
+            <option value="">Выбрать ...</option>
+            <option value="1L">1 л</option>
+            <option value="4L">4 л</option>
+            <option value="5L">5 л</option>
+            <option value="6L">6 л</option>
+            <option value="20L">20 л</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  
+    <div class="products__section">
+      <div id="result" class="products__list">
+        <div class="filtered 0w30 idemitsu petrol diesel 4L">IDEMITSU Zepro Touring Pro 0w30 SN/CF/GF-5 синтетическое, универсальное 4л</div>
+        <div class="filtered 5w40 idemitsu petrol 1L">IDEMITSU Zepro Racing 5w40 SN синтетическое, для бензинового двигателя 1л</div>
+  
+        <div class="filtered 0w20 toyota petrol 5L">Toyota 0w20 SN/GF-5 синтетическое, для бензинового двигателя 5л</div>
+        <div class="filtered 0w20 toyota petrol 1L">Toyota 0w20 SN/GF-5 синтетическое, для бензинового двигателя 1л</div>
+  
+        <div class="filtered 10w40 zic petrol 6L">ZIC X5 10w40 SM полусинтетическое, для бензинового двигателя 6л</div>
+        <div class="filtered 5w30 zic diesel 20L">ZIC X7 5w30 CF/SL синтетическое, для дизельного двигателя 20л</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // `NodeList` из выпадающих списков.
+  const SELECTS = document.querySelectorAll('select.linked__data');
+
+  // `NodeList` товаров для фильтрации.
+  const LIST = document.querySelectorAll('#result .filtered');
+
+  // Индекс текущего выпадающего списка,
+  // в котором было изменено значение пользователем.
+  let currentIndex = 0;
+
+  // Функция фильтрации и перерисовки выпадающих списков.
+  function filterList(event, index) {
+    // Массив классов из выбранных выпадающих списков.
+    const query = [];
+
+    // Уникальных значения выбранных классов
+    // для обновленного списка.
+    // Нужен для перестроения выпадающих списков.
+    const filtered = new Set();
+
+    // 1. Меняем индекс текущего выпадающего списка,
+    // на котором был произведен выбор пользователем.
+    currentIndex = index;
+
+    // 2. Формирование запроса для выбранных значений всех `select`.
+    SELECTS.forEach(function(select, index) {
+      // Сбрасываем `value`, если `index` больше текущего выбранного.
+      if (index > currentIndex) select.value = '';
+
+      // Если в списке выбран пункт, добавляем в запрос.
+      if (select.value) query.push(select.value);
+    });
+
+    // 3. Фильтруем список товаров, попутно формируя `filtered`.
+    LIST.forEach(function(product, index) {
+      if (query.every(prop => product.classList.contains(prop))) {
+        product.classList.forEach(item => filtered.add(item));
+        product.classList.remove('hide');
+      } else {
+        product.classList.add('hide');
+      }
+    });
+
+    // 4. По отфильтрованным данным формируем доступные выпадающие списки.
+    // Для текущего списка ничего не меняем, поэтому currentIndex + 1,
+    // то есть начинаем формирование только со следующего.
+    let i = currentIndex + 1;
+
+    for (i; i < SELECTS.length; i++) {
+      Array.from(SELECTS[i].options)
+        .forEach(function(option) {
+          // Если элемент списка не имеет `value` или
+          // `value` находится в `filtered`, то покажем его.
+          if ('' == option.value || filtered.has(option.value)) {
+            option.hidden = '';
+          } else {
+            option.hidden = 'hidden';
+          }
+        });
+    }
+  }
+
+  // Регистрируем обработчика события для каждого выпадающего списка.
+  SELECTS.forEach(function(item, index) {
+    item.addEventListener('input', (event) => filterList(event, index));
+  });
+});
+
+</script>

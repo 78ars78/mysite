@@ -153,7 +153,7 @@ function autoRazr($j)
 
 
 
-function motoRazr()  
+/* function motoRazr()  
 {
     $query = "SELECT razr, jl FROM moto_razr ORDER BY id";
 
@@ -162,7 +162,7 @@ function motoRazr()
 
     return $stmt3;
 
-}
+} */
 
 
 function motoRazr1()  
@@ -274,7 +274,7 @@ function orderDesc($j,$l,$order,$from_record_num,$records_per_page)
 
 
 /* для auto_min1 */
-function order1($j,$order,$from_record_num,$records_per_page)
+function order1($j,$l,$order,$from_record_num,$records_per_page)
 {
 
     $query = "SELECT id,itog_0,marka,model FROM auto WHERE j='$j'  ORDER BY $order LIMIT {$from_record_num}, {$records_per_page} ";
@@ -288,7 +288,7 @@ function order1($j,$order,$from_record_num,$records_per_page)
 
 
 /* для auto_min1 */
-function orderDesc1($j,$order,$from_record_num,$records_per_page)
+function orderDesc1($j,$l,$order,$from_record_num,$records_per_page)
 {
 
     $query = "SELECT id,itog_0,marka,model,l FROM auto WHERE j='$j' ORDER BY $order DESC LIMIT {$from_record_num}, {$records_per_page} ";
@@ -304,7 +304,7 @@ function orderDesc1($j,$order,$from_record_num,$records_per_page)
 
 
 /* для auto_min2 */
-function order2($order,$from_record_num,$records_per_page)
+function order2($j,$l,$order,$from_record_num,$records_per_page)
 {
 
     $query = "SELECT id,itog_0,marka,model FROM auto ORDER BY $order LIMIT {$from_record_num}, {$records_per_page} ";
@@ -318,7 +318,7 @@ function order2($order,$from_record_num,$records_per_page)
 
 
 /* для auto_min2 */
-function orderDesc2($order,$from_record_num,$records_per_page)
+function orderDesc2($j,$l,$order,$from_record_num,$records_per_page)
 {
 
     $query = "SELECT id,itog_0,marka,model FROM auto ORDER BY $order DESC LIMIT {$from_record_num}, {$records_per_page} ";
@@ -332,14 +332,69 @@ function orderDesc2($order,$from_record_num,$records_per_page)
 
 
 
+function vmenu($e)
+{
+
+    $query = "SELECT menu,parent,sort FROM vmenu WHERE parent=$e ORDER BY sort";
+
+    $stmt8 = $this->conn->prepare($query);
+    $stmt8->execute();
+
+    return $stmt8;
+    
+}
 
 
 
+function moto_auto() {
+ $query= "SELECT name,marka,price,id,color,brightness,img FROM moto ORDER BY price";
+ $stmt12=$this->conn->prepare($query);
+ $stmt12->execute();
+ return $stmt12;
+} 
 
+function moto_input($t) {
+ $query="SELECT * FROM moto_razr WHERE attr='$t'";
+ $stmt13=$this->conn->prepare($query);
+ $stmt13->execute();
+ return $stmt13;
+}
+
+
+function music($id_0)
+{
+    // запрос MySQL
+    $query = "SELECT song FROM music_songs WHERE label=$id_0";
+
+    $stmt14 = $this->conn->prepare($query);
+    $stmt14->execute();
+
+    return $stmt14;
+}
+
+
+function music_pair($id)  {
+$query = "SELECT id FROM music WHERE id=$id";
+$stmt15 = $this->conn->prepare($query);
+$stmt15->execute();
+return $stmt15;
+}
+
+function music_pair1($id)  {
+$query="SELECT id FROM music WHERE parent=$id";
+$stmt16=$this->conn->prepare($query);
+$stmt16->execute();
+return $stmt16;
+}
+function music_pair2($id_1)  {
+    $query="SELECT id FROM music WHERE parent=$id_1";
+    $stmt17=$this->conn->prepare($query);
+    $stmt17->execute();
+    return $stmt17;
+}
 
 
 // метод для обновления товара
-
 
 
 // метод для удаления товара

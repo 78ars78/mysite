@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фасетный поиск на JavaScript</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Фильтры:</h2>
+<h3>Категории:</h3>
+<label>
+    <input type="checkbox" value="Фрукты" onclick="filterProducts()"> Фрукты
+</label>
+<br>
+<label>
+    <input type="checkbox" value="Овощи" onclick="filterProducts()"> Овощи
+</label>
+<br>
+<label>
+    <input type="checkbox" value="Молочные продукты" onclick="filterProducts()"> Молочные продукты
+</label>
+<br>
+
+<h3>Ценовой диапазон:</h3>
+<label>
+    <input type="checkbox" value="0-50" onclick="filterProducts()"> 0 - 50
+</label>
+<br>
+<label>
+    <input type="checkbox" value="51-100" onclick="filterProducts()"> 51 - 100
+</label>
+<br>
+<label>
+    <input type="checkbox" value="101-150" onclick="filterProducts()"> 101 - 150
+</label>
+<br>
+
+<h2>Список продуктов:</h2>
+<ul id="product-list">
+<div style="position: fixed; left: 100px;">
+    <li data-category="Фрукты" data-price="30">Яблоко - 30</li>
+    <li data-category="Фрукты" data-price="40">Банан - 40</li>
+    <li data-category="Овощи" data-price="20">Морковь - 20</li>
+    <li data-category="Овощи" data-price="60">Брокколи - 60</li>
+    <li data-category="Молочные продукты" data-price="80">Молоко - 80</li>
+    <li data-category="Молочные продукты" data-price="120">Йогурт - 120</li>
+</div>
+</ul>
+
+<script>
+    function filterProducts() {
+        const categoryCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const priceCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        const selectedCategories = Array.from(categoryCheckboxes)
+            .filter(checkbox => !isPriceCheckbox(checkbox))
+            .map(checkbox => checkbox.value);
+
+        const selectedPrices = Array.from(priceCheckboxes)
+            .filter(checkbox => isPriceCheckbox(checkbox))
+            .map(checkbox => checkbox.value);
+
+        const products = document.querySelectorAll('#product-list li');
+        products.forEach(product => {
+            const category = product.getAttribute('data-category');
+            const price = parseInt(product.getAttribute('data-price'));
+
+            const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(category);
+            const priceMatch = selectedPrices.length === 0 || selectedPrices.some(range => {
+                const [min, max] = range.split('-').map(Number);
+                return price >= min && price <= max;
+            });
+
+            if (categoryMatch && priceMatch) {
+                product.classList.remove('hidden');
+            } else {
+                product.classList.add('hidden');
+            }
+        });
+    }
+
+    function isPriceCheckbox(checkbox) {
+        return checkbox.value.includes('-');
+    }
+</script>
+
+</body>
+</html>

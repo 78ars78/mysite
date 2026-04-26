@@ -25,18 +25,24 @@ $from_record_num = ($records_per_page * $page) - $records_per_page;
 	<link rel="stylesheet" href="libs/css/custom.css">
 	<link rel="stylesheet" href="style.css">
   <style>
-  body,td,th {	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif; }  
+  body,td,th {font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif; }  
   </style>
+
+
+	
+
+
 </head>
 
   
 
 
-<body cellspacing="0" cellpadding="0" topmargin="0" leftmargin="0" align="left" background="img/Wooden.jpg">
-	<table topmargin="0" width="100%" leftmargin="0"   border="0" cellpadding="0" cellspacing="0" align="center" >
+<body  cellspacing="0" cellpadding="0" topmargin="0" leftmargin="0" align="left" background="img/Wooden.jpg">
+	<table  topmargin="0" width="100%" leftmargin="0"   border="0" cellpadding="0" cellspacing="0" align="center" >
 	<tr><td>	
 		<?	include_once "layout_header.php"; ?>
 
+		
 		
 		
 		
@@ -47,40 +53,103 @@ $from_record_num = ($records_per_page * $page) - $records_per_page;
 
 
     
-<table style="border-bottom: none; border-left:none; border-right:none; border-top: none;" border="0px" topmargin="0" leftmargin="0"  cellpadding="0" cellspacing="0" 
+<table  style=" border-bottom: none; border-left:none; border-right:none; border-top: none;" border="0px" topmargin="0" leftmargin="0"  cellpadding="0" cellspacing="0" 
 bordercolor="black" width="100%" align= "center">
 </td></tr><tr align="left" width="100%" >
-<td valign="top" width="205" bgcolor=" #cdcdcd"><? $n=$l; include_once "lefttd.php"; ?>
-</td><td  valign="top" style="background:white">
+<td valign="top" width="205" bgcolor=" #cdcdcd"><? $n=$l; include_once "lefttd.php";   ?>  
+</td><td  valign="top" style="background:white;">
+
+
+
+<div style="position:relative; z-index:1; margin-top: 30px; margin-right:10px; margin-left:15px">
+
+
+
+<center><h1>Nine Princes In Amber 
+Roger Zelazny</h1></center>
+
+
+CHAPTER 1
+
+It was starting to end, after what seemed most of eternity to me.
+I attempted to wriggle my toes, succeeded. I was sprawled there in a hospital bed and my legs were done up in plaster casts, but they were still mine.
+I squeezed my eyes shut, and opened fhem, three times.
+The room grew steady.
+Where the hell was I?
+Then the fogs were slowly broken, and some of that which is called memory returned to me. I recalled nights
 
 
 
 
-<center><br>
-    <font color=black style="background-color: white ">&nbsp; сортировка по: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		
-
-		
+<?
+include_once "pict.php"; ?>
 
 
 
-        <a style="<? if ($d==1) {echo "color:#C15E5F";} else {echo "color:#2C7CE9";} ?>; text-decoration: none; " href="auto_min2.php?order=marka&f=1&d=1<? echo "&i=$i"; ?>">
-        марка(возр) </a>	&nbsp;&nbsp;&nbsp;	
-                
-                
-            
-        <a style="<? if ($d==2) {echo "color:#C15E5F";} else {echo "color:#2C7CE9";} ?>; text-decoration: none" href="auto_min2.php?order=marka&f=2&d=2<? echo "&i=$i"; ?>"> марка(убыв) </a>	&nbsp;&nbsp;&nbsp;
-                
-                
-                
-         <a style="<? if ($d==3) {echo "color:#C15E5F";} else {echo "color:#2C7CE9";} ?>; text-decoration: none" href="auto_min2.php?order=model&f=1&d=3<? echo "&i=$i"; ?>"> модель </a>&nbsp;
-        
-            </font><br></center>
+and nurses and needles. 
+Every time things would begin to clear a bit, someone would come in and jab me with something. That's how it had been. Yes. Now, though, I was feeling halfway decent. They'd have to stop.
+Wouldn't they?
+The thought came to assail me: Maybe not.
+Some natural skepticism as to the purity of all human motives came and sat upon my chest. I'd been over narcotized, I suddenly knew. No real reason for it, from the way I felt, and no reason for them to stop now, if they'd been paid to keep it up. So play it coo'l and stay dopey, said a voice which was my worst, if wiser, self.
+So I did.
+
+<img src="img/0_1707394328547.gif" height="200" style="padding: 15px;position:relative; float:right">
+
+
+A nurse poked her head in the door about ten minutes later, and I was, of course, still sacking Z's. She went away.
+By then, I'd reconstructed a bit of what had occured
 
 
 
+I had been in some sort of accident, I remembered vaguely. What had happened after that was still a blur; and as to what had happened before, I had no inkling whatsoever. But I had first been in a hospital and then brought to this place, I remembered. Why? I didn't know.
+However, my legs felt pretty good. Good enough to hold me up, though I didn't know how much time had lapsed since their breaking—and I knew they'd been broken.
+So I sat up. It took me a real effort, as my muscles were very tired. It was dark outside and a handful of stars were standing naked beyond the window. I winked back at them and threw my legs over the edge of the bed.
+I was dizzy, but after a while it subsided and I got up, gripping the rail at the head of the bed, and I took my frst step.
+Okay. My legs held me.
+So, theoretically, I was in good enough shape to walk out.
+I made it back to the bed, stretched out and thought. I was sweating and shaking. Visions of sugar plums, etc.
+In the State of Denmark there was the odor of decay...
+It had been an accident involving an auto, I recalled. One helluva one...
+Then the door opened, letting in light, and through slits beneath my eyelashes I saw a nurse with a hypo in her hand.
 
+She approached my bedside, a hippy broad with dark hair and big arms.
+Just as she neared, I sat up.
+“Good evening,” I said.
+“Why-good evening,” she replied.
+“When do I check out?” I asked.
+“I'll have to ask Doctor.”
+“Do so,” I said.
+“Please roll up your sleeve.”
+“No thanks.”
+“I have to give you an injection”
+“No you don't. I don't need it”
+“I'm afraid that's for Doctor to say.”
+“Then send him around and let him say it. But in the meantime, I will not permit it.”
+“I'm afraid I have my orders.”
+“So did Eichmann, and look what happened to him,” and I shook my head slowly.
+“Very well,” she said. “I'll have to report this...
+“Please do,” I said, “and while you're at it, tell him I've decided to check out in the morning.”
+“That's impossible. You can't even walk—and there were internal injuries...”
+“We'll see,” said I. “Good night”
+She swished out of sight without answering.
+So I lay there and mulled. It seemed I was in some sort of private place—so somebody was footing the bill. Whom did I know? No visions of relatives appeared behind my eyes. Friends either. What did that leave? Enemies?
+I thought a while.
+Nothing.
+Nobody to benefact me thus.
+I'd gone over a cliff in my car, and into a lake, I suddenly remembered. And that was all I remembered.
+I was...
+I strained and began to sweat again.
+I didn't know who I was.
+But to occupy myself, I sat up and stripped away all my bandages. I seemed all right underneath them, and it seemed the right thing to do. I broke the cast on my right leg, using a metal strut I'd removed from the head of the bed. I had a sudden feeling that I had to get out in a hurry, that there was something I had to do.
+I tested my right leg. It was okay.
+I shattered the cast on my left leg, got up, went to the closet.
+No clothes there.
+Then I heard the footsteps. I returned to my bed and covered over the broken casts and the discarded bandages.
+The door swung inward once again.
+Then there was light all around me, and there was a beefy guy in a white jacket standing with his hand on the wall switch.
+“What's this I hear about 
 
+</div>
     <?    
 include_once "config/database.php";
 include_once "product.php";
@@ -151,293 +220,24 @@ $page_title = "Вывод товаров";
 
     // здесь будет пагинация
 // страница, на которой используется пагинация
-$page_url = "auto_min2.php?i=1&order=$order&f=$f&d=$d&";
+$page_url = "auto_min.php?i=1&order=$order&f=$f&d=$d&";
 
 // подсчёт всех товаров в базе данных, чтобы подсчитать общее количество страниц
 $total_rows = $product->countAll2();
 
 // пагинация
-include "paging.php";
-
-
-
 
 
 
 
 // отображаем товары, если они есть
-if ($num > 0 && $total_rows > 0) {
-
-    echo "<table class='table table-hover table-responsive table-bordered'><br>";
-        echo "<tr>";
-            echo "<th>Товар</th>";
-            echo "<th>Цена</th>";
-            echo "<th>Описание</th>";
-            echo "<th>Категория</th>";
-            echo "<th>Действия</th>";
-        echo "</tr>";
-
-        if ($f==1) {  $stmt7 = $product->order2($order,$from_record_num,$records_per_page); 
-  
-           
-        }
-            else {$stmt7 = $product->orderDesc2($order,$from_record_num,$records_per_page);
-         
-         
-         }	
- 
-             
-             
-             if (!$stmt7) { include_once "end.php"; exit();}
+?>
 
 
-
-        while ($row7 = $stmt7->fetch(PDO::FETCH_ASSOC)) {
-
-            extract($row7);
-
-            echo "<tr>";
-                echo "<td><img src='img/auto/".$row7['itog_0']."'></td>";
-                echo "<td>{$marka}</td>";
-                echo "<td>".$row7['model']."</td>";
-                echo "<td>";
-                    
-                echo "</td>";
-  
-                echo "<td>";
-                    // здесь будут кнопки для просмотра, редактирования и удаления
-// ссылки/кнопки для просмотра, редактирования и удаления товара
-echo "<a href='read_product.php?id={$id}' class='btn btn-primary left-margin'>
-     В корзину
-</a>
-
-";
-                echo "</td>";
-
-            echo "</tr>";
-
-        }
-
-    echo "</table>";
-
-
-
-
-
-
-
-}
-
-// сообщим пользователю, что товаров нет
-else {
-    echo "<div class='alert alert-info'>&nbsp Товары не найдены.</div>";
-} ?>
-
-
-
-<? include "paging.php"; ?>
-
-
-
-
-
-
-
-
-
-
-		<!-- <table style="margin-top: 43px; margin-left: 20px" width=360 border=0 cellspacing=0 cellpadding=0>
-<tr>
-<td><a onMouseOver ="javascript:doPic('2.jpg');" href="#"><img src="2.jpg" width=90  border=0></a></td>
-<td><a href="javascript:doPic('3.jpg');"><img src="3.jpg" width=90 border=0></a></td>
-<td><a href="javascript:doPic('1.jpg');"><img src="1.jpg" width=90 border=0></a></td>
-<td><a href="javascript:doPic('4.jpg');"><img src="4.jpg" width=90 border=0></a></td>
-</tr>
-</table> -->
-		
-
-
-
-
-
-
-
-
-<? /* if ($i==1) {echo "<div style='position:absolute; left:225px; top: 264px; z-index: 2;'>автообои</div>";}
-		if ($i==2) {echo "мотообои";} if ($i==3) {echo "музыка";}  */
-		?> 
 	</td></tr></table></table>
 	 <center>
-	 
-		 
-		 <? require_once("layout_footer.php"); ?></center><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-<SCRIPT>
-
-let id1= <? echo json_encode($boxa); ?>; 
- let id2= <? echo json_encode($boxb); ?>;
-/*  id1.forEach( elem => { 
-			alert(elem);}); */
-let f=<? echo $l; ?>+1;  
-
-
-
-
-/* function doPic(imgName) {
-imgOn = ("" + imgName);
-document.mainpic.src = imgOn;
-} */
-</script>
-<script>
-
-
-
-
-
-let a=0, filterBox, b0=0, b1=0, b2=0, c0=0, c1=0, c2=0, b, c, arr=[], arr1=[];
-            if(a==0) {  for (let h=1; h<f; h++) {
-		                        filterBox = document.querySelectorAll('.box'+h); 
-		                     	filterBox.forEach( elem => { 
-		                     	elem.style.display ="inline-block" ;} );  } }
-function myFunction(myCheck) { <? echo "kgv"; ?> let checkBox = document.getElementById(myCheck);
-       if (checkBox.checked){	 a=a+1; 
-          for (let h=1; h<f; h=h+1) {
-          filterBox = document.querySelectorAll('.box'+h); 
-          filterBox.forEach( elem => { 
-          elem.style.display ="none" ;} );   }    							
-					
-			let	m0='m'+0;			
-	    if (myCheck==m0 || arr['0']==1 ) { arr['0']=1;
-		filterBox = document.querySelectorAll('.box1');
-		filterBox.forEach( elem => { 
-		elem.style.display ="inline-block" ;} ); arr1['0']=0; }		
-		
-		
-
-
-
-
-		
-					
-		if (checkBox==m1 || arr['1']==1 ) { arr['1']=1;
-			filterBox = document.querySelectorAll('.box2');
-			filterBox.forEach( elem => { 
-		elem.style.display ="inline-block" ;} ); arr1['1']=0;
- 		 }					
-	
-		if (checkBox==m2 || arr['2']==1 ) { arr['2']=1;
-   	    filterBox= document.querySelectorAll('.box3');
-		filterBox.forEach( elem => { 
-		elem.style.display ="inline-block" ;} ); arr1['2']=0;
-    		}	
-		if (checkBox==m3 || arr['3']==1 ) { arr['3']=1;
-   	    filterBox= document.querySelectorAll('.box4');
-		filterBox.forEach( elem => { 
-		elem.style.display ="inline-block" ;} ); arr1['3']=0;
-    		}
-								
-    /* let arr={myFirstName:'John'};for(key in arr) alert(key+':'+arr[key]);y=arr[key];alert(y);*/					
-		
-		} 
-	 else {   a=a-1;    
-		   
-		   
-	/*for (let h=0; h<f; h=h+1) {
-		     filterBox = document.querySelectorAll('.box'+h); 
-				filterBox.forEach( elem => { 
-					elem.style.display ="inline-block" ;} );  
-			 	  }
-		*/
-			   
-		 
-		         
-		   if (checkBox==m0 || arr1['0']==1  || arr['0']==0) { arr1['0']=1;
-			filterBox= document.querySelectorAll('.box1');
-			filterBox.forEach( elem => { 
-		elem.style.display ="none" ;} ); arr['0']=0;
-       	 }	     
-			if (checkBox==m1 || arr1['1']==1  || arr['1']==0) { arr1['1']=1;
-			filterBox= document.querySelectorAll('.box2');
-			filterBox.forEach( elem => { 
-		elem.style.display ="none" ;} ); arr['1']=0;
-       	 }		  
-			if (checkBox==m2 || arr1['2']==1 || arr['2']==0) { arr1['2']=1;
-   	    filterBox = document.querySelectorAll('.box3');
-		filterBox.forEach( elem => { 
-		elem.style.display ="none" ;} ); arr['2']=0;
-		}
-		   
-		   
-		  if (checkBox==m3 || arr1['3']==1 || arr['3']==0) { arr1['3']=1;
-   	    filterBox = document.querySelectorAll('.box4');
-		filterBox.forEach( elem => { 
-		elem.style.display ="none" ;} ); arr['3']=0;
-		} 
-  
-		   
-      }
-		   
-		   
-			 
-	 
-	 
-	 
-					
-	 
-	 
-if(a==0) {   for (let h=1; h<f; h=h+1) {
-		     filterBox = document.querySelectorAll('.box'+h); 
-				filterBox.forEach( elem => { 
-					elem.style.display ="inline-block" ;} );  
-			 	  }
-				
-				}
- 
- 
- 
- }
-
-
-	
-	/*
-		
-	
- function myFunction(myCheck,text) { 
-  // Get the checkbox
-  var checkBox = document.getElementById(myCheck);
-  // Get the output text
-  var text = document.getElementById(text);
-	  // If the checkbox is checked, display the output text
- if (checkBox.checked == true ){	b=b+1; 
-    text.style.display = "inline-block";
-  } 
-	 else {   b=b-1;
-    text.style.display = "none";
-  } 
-	
-	
-	
-	*/
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-</script>
+	 		 
+<? require_once("layout_footer.php"); ?></center><br><br><br><br><br><br><br><br>
 
 
 </body>
