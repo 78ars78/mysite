@@ -1,0 +1,23 @@
+/* CSS Document */
+
+#coolmenu {
+background-color: #FFFFFF;
+}
+
+
+#coolmenu a{
+
+
+display:block;
+text-decoration:none;
+color:#000000;
+
+}
+
+html>body #coolmenu a {
+
+width:auto;
+}
+
+#coolmenu a:hover  {
+background-color: #33FF00;

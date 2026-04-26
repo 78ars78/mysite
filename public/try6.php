@@ -1,0 +1,18 @@
+    <div class="wrapper">
+       <div class="price-input">
+        <div class="field">
+          <span>Min</span>
+          <input type="number" class="input-min" value="0">
+        </div>
+        <div class="separator">-</div>
+        <div class="field">
+          <span>Max</span>
+          <input type="number" class="input-max" value="10000000">
+        </div>
+      </div>
+    </div>
+
+
+
+
+    

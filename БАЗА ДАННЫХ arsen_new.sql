@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: mysql
--- Время создания: Май 31 2024 г., 11:05
+-- Время создания: Авг 15 2025 г., 16:35
 -- Версия сервера: 8.0.29
 -- Версия PHP: 8.2.11
 
@@ -127,22 +127,34 @@ INSERT INTO `categories` (`id`, `title`, `parent`, `sort`) VALUES
 
 CREATE TABLE `moto` (
   `id` int NOT NULL,
-  `jl` int NOT NULL,
   `price` int NOT NULL,
-  `name` varchar(250) DEFAULT NULL
+  `marka` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `model` varchar(50) NOT NULL,
+  `color` varchar(50) NOT NULL,
+  `brightness` varchar(50) CHARACTER SET cp1251 COLLATE cp1251_general_ci DEFAULT NULL,
+  `img` varchar(50) NOT NULL,
+  `img_0` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
 
 --
 -- Дамп данных таблицы `moto`
 --
 
-INSERT INTO `moto` (`id`, `jl`, `price`, `name`) VALUES
-(3, 5, 2000, 'совок'),
-(2, 1, 2000, 'веник'),
-(1, 1, 1000, 'пылесос'),
-(4, 2, 1200, 'метла'),
-(5, 1, 2000, 'ведро'),
-(6, 1, 2500, 'тряпка');
+INSERT INTO `moto` (`id`, `price`, `marka`, `name`, `model`, `color`, `brightness`, `img`, `img_0`) VALUES
+(3, 1000, 'ferrari', 'fer1', '1', 'red', 'bright', 'ferrari_red', ''),
+(2, 2000, 'ferrari', 'fer2', '2', 'yellow', 'bright', 'ferrari_yellow', ''),
+(1, 6222, 'ferrari', 'fer3', '3', 'black', 'dark', 'ferrari_black', ''),
+(4, 3245, 'ferrari', 'fer4', '4', 'gray', 'bright', 'ferrari_gray', ''),
+(5, 23422, 'bentley', 'ben3', '1', 'red', 'bright', 'bentley_red', ''),
+(6, 2345, 'bentley', 'ben2', '2', 'black', 'dark', 'bentley_black', ''),
+(7, 3456, 'bentley', 'ben1', '3', 'gray', 'bright', 'bentley_gray', ''),
+(8, 2356, 'bentley', 'ben4', '4', 'yellow', 'bright', 'bentley_yellow', ''),
+(9, 3563, 'lambo', 'lam3', '1', 'red', 'bright', 'lambo_red', ''),
+(10, 3456, 'lambo', 'lam2', '2', 'yellow', 'bright', 'lambo_yellow', ''),
+(11, 8333, 'lambo', 'lam1', '3', 'gray', 'bright', 'lambo_gray', ''),
+(12, 23444, 'lambo', 'lam4', '4', 'black', 'dark', 'lambo_black', ''),
+(14, 1000, 'ferrari', 'fer1', '1', 'red', 'bright', 'ferrari_red', '');
 
 -- --------------------------------------------------------
 
@@ -152,18 +164,25 @@ INSERT INTO `moto` (`id`, `jl`, `price`, `name`) VALUES
 
 CREATE TABLE `moto_razr` (
   `id` int NOT NULL,
-  `razr` varchar(50) NOT NULL,
-  `jl` int NOT NULL
+  `name` varchar(30) CHARACTER SET cp1251 COLLATE cp1251_general_ci NOT NULL,
+  `attr` varchar(30) NOT NULL,
+  `nazv` varchar(30) CHARACTER SET cp1251 COLLATE cp1251_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
 
 --
 -- Дамп данных таблицы `moto_razr`
 --
 
-INSERT INTO `moto_razr` (`id`, `razr`, `jl`) VALUES
-(1, 'full-hd', 1),
-(2, 'laptop', 2),
-(3, 'hd', 5);
+INSERT INTO `moto_razr` (`id`, `name`, `attr`, `nazv`) VALUES
+(1, 'Феррари', 'marka', 'ferrari'),
+(2, 'Бентли', 'marka', 'bentley'),
+(3, 'Ламборгини', 'marka', 'lambo'),
+(7, 'Красный', 'color', 'red'),
+(8, 'Черный', 'color', 'black'),
+(9, 'Серый', 'color', 'gray'),
+(10, 'Желтый', 'color', 'yellow'),
+(12, 'bright', 'brightness', ''),
+(13, 'dark', 'brightness', '');
 
 -- --------------------------------------------------------
 
@@ -174,41 +193,58 @@ INSERT INTO `moto_razr` (`id`, `razr`, `jl`) VALUES
 CREATE TABLE `music` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `parent` int UNSIGNED DEFAULT NULL,
-  `sort` int NOT NULL
+  `parent` int UNSIGNED DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
 
 --
 -- Дамп данных таблицы `music`
 --
 
-INSERT INTO `music` (`id`, `title`, `parent`, `sort`) VALUES
-(1, 'Уитни Хьюстон', 0, 1),
-(2, 'Абба', 0, 2),
-(3, 'Битлз', 0, 3),
-(4, 'Рок\'н\'ролл', 0, 4),
-(6, 'Мульт1', 1, 1),
-(7, 'Мульт11', 1, 2),
-(8, 'Мульт2', 2, 1),
-(9, 'Мульт22', 8, 1),
-(10, 'Мульт111', 7, 1),
-(11, 'Мульт222', 8, 2),
-(12, 'Мульт3', 3, 1),
-(13, 'Мульт33', 3, 2),
-(14, 'Мульт4', 4, 1),
-(15, 'Мульт1111', 6, 1),
-(16, 'Мульт2222', 8, 3),
-(17, 'Мульт11111', 15, 1),
-(18, 'Мульт44', 14, 1),
-(19, 'Мульт444', 14, 2),
-(20, 'Мульт4444', 14, 3),
-(21, 'Мульт44444', 14, 4),
-(22, 'Мульт444444', 14, 5),
-(25, 'Мульт11111111', 6, 3),
-(26, 'Мульт1111111', 6, 2),
-(27, 'Мульт333', 12, 1),
-(28, 'Мульт3333', 27, 1),
-(29, 'Мульт111111111', 7, 2);
+INSERT INTO `music` (`id`, `title`, `parent`) VALUES
+(2, 'Абба', 1),
+(3, 'Битлз', 1),
+(6, 'Мульт1', 1),
+(8, 'Мульт2', 2),
+(11, 'Мульт222', 8),
+(12, 'Мульт3', 3),
+(13, 'Мульт33', 3),
+(14, 'Мульт4', 2),
+(16, 'Мульт2222', 8),
+(19, 'Мульт444', 14),
+(20, 'Мульт4444', 14),
+(21, 'Мульт44444', 14),
+(22, 'Мульт444444', 14),
+(27, 'Мульт333', 12),
+(28, 'Мульт3333', 27),
+(1, 'ПРИОРА', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `music_songs`
+--
+
+CREATE TABLE `music_songs` (
+  `id` int NOT NULL,
+  `song` varchar(50) NOT NULL,
+  `label` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `music_songs`
+--
+
+INSERT INTO `music_songs` (`id`, `song`, `label`) VALUES
+(1, 'уитни15', 15),
+(3, 'уитни26', 26),
+(5, 'уитни26_0', 26),
+(6, 'уитни25', 25),
+(8, 'уитни6', 6),
+(11, 'уитни10', 10),
+(12, 'a', 1),
+(13, '', 6),
+(15, 'sd', 1),
+(16, 'sd', 1);
 
 -- --------------------------------------------------------
 
@@ -304,6 +340,12 @@ ALTER TABLE `music`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `music_songs`
+--
+ALTER TABLE `music_songs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `userlist`
 --
 ALTER TABLE `userlist`
@@ -342,19 +384,25 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `moto`
 --
 ALTER TABLE `moto`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `moto_razr`
 --
 ALTER TABLE `moto_razr`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `music`
 --
 ALTER TABLE `music`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9000003;
+
+--
+-- AUTO_INCREMENT для таблицы `music_songs`
+--
+ALTER TABLE `music_songs`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `userlist`

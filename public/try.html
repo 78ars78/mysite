@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style type="text/css">
+.on { background-color: rgb(149, 221, 120); }
+</style>
+<script type="text/javascript">
+
+$(document).ready(function (){          $('.item').addClass('on');
+    $('input').click(function (){
+       $('.item').removeClass('on');
+        let fltr=filter();
+     /*  let [str,str1,str2]=filter();
+        if (str==''&&str1==''&&str2=='') { $('.item').addClass('on'); return;} alert(str,str1,str2);
+        $(str||str1||str2).addClass('on');  }); */
+        if (fltr=='') { $('.item').addClass('on'); return;}
+        $(fltr).addClass('on');
+    });
+});
+function filter() {
+    let str='';  let str1='';   let str2='';  let str11='';
+    $('input:checkbox:checked').each(function (){
+    let typ=$(this).data('type');
+        if (typ=='f') {
+        str=str+'[data-'+typ+'='+$(this).data(typ)+']'; }
+        if (typ=='foo') {
+        str1=str1+'[data-'+typ+'='+$(this).data(typ)+']'; }
+        if (typ=='bar') {
+        str2=str2+'[data-'+typ+'='+$(this).data(typ)+']'; }
+    
+    }); str11=str+str1+str2;
+    return str11;
+};
+
+</script></head><body>
+<!-- Чекбоксы -->
+foo
+    <input type="checkbox" data-type="f" data-f="f1" />
+    <input type="checkbox" data-type="foo" data-foo="fo_it2" />
+    <input type="checkbox" data-type="foo" data-foo="fo_it3" />
+    ...
+bar
+    <input type="checkbox" data-type="bar" data-bar="bar_item1" />
+    <input type="checkbox" data-type="bar" data-bar="bar_item2" />
+
+
+<!-- Товары -->
+
+
+    <div class="item" data-foo="fo_it3" data-f="f1" data-bar="bar_item1">
+
+        foo_item1 bar_item1
+
+    </div>
+    <div class="item" data-foo="fo_it3" data-f="f1" data-bar="bar_item1">
+
+        foo_item3 bar_item1
+
+    </div>
+    <div class="item" data-foo="fo_it3" data-bar="bar_item2">
+
+        foo_item3 bar_item2
+
+    </div>
+
+    <div class="item" data-foo="fo_it2" data-bar="bar_item1">
+
+        foo_item2 bar_item1
+
+    </div>
+
+
+    <div class="item" data-foo="fo_it2" data-bar="bar_item2">
+
+        foo_item2 bar_item2
+
+    </div>
+
+    <div class="item" data-foo="fo_it2" data-bar="bar_item1">
+
+        foo_item2 bar_item1
+
+    </div>
+
+    ...
+
+
+
+</body>
+
+</html>

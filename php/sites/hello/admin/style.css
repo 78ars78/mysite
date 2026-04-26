@@ -1,0 +1,38 @@
+.main_border {background:white; border: 1px solid ;}
+p {font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; font-size: 15px; margin: 10px;}
+.left {background-color: #A6A4A4; border-right: 1px solid #000000;}
+body {background-image: url(img/bg.gif);}
+
+.lesson {border: 1px solid grey;width:95%;}
+.lesson_title {background-color:#CCC2C2;}
+.lesson_name {font-weight:bold; margin-top: 7px;}
+.lesson_adds {font-size:10px; margin-top:7px; margin-bottom: 7px; color: white;}
+
+p.title {
+background-color: #A72E37;
+color: #ffffff;
+font-weight:bold;
+margin:5px;
+padding:5px;}
+#coolmenu{
+border: 1px solid gray; /*Стиль рамки */
+border-bottom-width: 0;
+width: 93%; /*Ширина меню */
+background-color: #f6f6f6;  /*Фоновый цвет ячейки*/
+margin:8px; /*Ширина отступов*/}
+* html #coolmenu{ 
+width: 150px;/*Ширина меню для Internet Explorer*/}
+#coolmenu a{
+font: bold 13px Arial; /*Шрифт текста*/
+padding: 2px; /*Внутренний отсутп текста ссылки от краев ячейки*/
+padding-left: 4px;/*Внутренний отсутп текста ссылки от левого края ячейки*/
+display: block;
+width: 100%; /*Ширина ячейки*/
+color: #000000;  /*Цвет текста*/
+text-decoration: none; /*Подчеркивание у ссылок - нет*/
+border-bottom: 1px solid gray;}
+html>body #coolmenu a{ 
+width: auto;}
+#coolmenu a:hover{
+background-color: #cccccc; /*Фоновый цвет ячейки при наведение курсора*/
+color: #000000;  /*Цвет текста при наведении курсора*/}

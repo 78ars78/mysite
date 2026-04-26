@@ -33,8 +33,24 @@ services:
       - php 
     networks:
       - tools_php-network  
+    links:
+      - wordpress 
 
-
+  wordpress:
+    depends_on:
+      - mysql
+    image: wordpress:latest
+    container_name: ls_wp
+    volumes:
+      - ./data/html:/var/www/html
+    ports:
+      - "87:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST:  db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: s123123
+      WORDPRESS_DB_NAME: wordpress
 
   mysql:
     image: mysql:8.0.29

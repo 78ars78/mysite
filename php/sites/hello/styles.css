@@ -1,0 +1,14 @@
+p {
+   color: red;
+  font-size: 24px;
+  font-family: "Courier New"
+
+}
+
+
+.right {
+border-right-color:#FF9966;
+
+border-right-width:thin;
+
+}
